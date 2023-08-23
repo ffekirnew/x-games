@@ -7,10 +7,14 @@ function App() {
     base: `"nav" "main"`,
     lg: `"nav nav" "aside main"`
   }}>
-    <GridItem area={"nav"} boxSize={'60px'}><NavBar /></GridItem>
+    <GridItem area={"nav"} boxSize={'60px'}>
+      <NavBar />
+    </GridItem>
+
     <Show above='lg'>
-    <GridItem area={"aside"}>aside</GridItem>
+      <GridItem area={"aside"}>aside</GridItem>
     </Show>
+
     <GridItem area={"main"}>
       <GameGrid />
     </GridItem>
