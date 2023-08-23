@@ -7,7 +7,7 @@ import { HStack, Icon } from "@chakra-ui/react"
 import { Platform } from "../hooks/useGames"
 import { IconType } from 'react-icons'
 
-interface GamePlatformIconsListProps {
+interface Props {
   platforms: Platform[]
 }
 
@@ -26,7 +26,7 @@ const iconsMap: { [key: string]: IconType } = {
   web: BsGlobe
 }
 
-const GamePlatformIconsList = ({ platforms }: GamePlatformIconsListProps) => {
+const GamePlatformIconsList = ({ platforms }: Props) => {
   return <HStack marginY={2}>
     { platforms.map(platform => <Icon as={iconsMap[platform.slug]} color='gray.500' />) }
   </HStack>

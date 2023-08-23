@@ -4,12 +4,12 @@ import GamePlatformIconsList from './GamePlatformIconsList'
 import GameCriticBadge from './GameCriticBadge'
 import getCroppedImageUrl from '../services/image-crop-url'
 
-interface GameCardProps {
+interface Props {
   game: Game
 }
 
-const GameCard = ({ game }: GameCardProps) => {
-  return <Card width={'300px'} borderRadius={15} overflow={'hidden'}>
+const GameCard = ({ game }: Props) => {
+  return <Card>
     <Image src={getCroppedImageUrl(game.background_image)} />
     <CardBody>
       <Heading fontSize={'2xl'}>{game.name}</Heading>
