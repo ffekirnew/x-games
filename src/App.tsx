@@ -6,10 +6,10 @@ import { useState } from 'react'
 import { Genre } from './hooks/useGenres'
 
 function App() {
-  const [genre, setGenre] = useState<Genre | null>(null)
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null)
 
   const changeFilter = (genre: Genre) => {
-    setGenre(genre)
+    setSelectedGenre(genre)
   }
 
   return (<Grid 
@@ -28,12 +28,12 @@ function App() {
 
     <Show above='lg'>
       <GridItem area={"aside"} paddingX={5}>
-        <GenreList onSelectGenre={changeFilter}/>
+        <GenreList onSelectGenre={changeFilter} selectedGenre={selectedGenre}/>
       </GridItem>
     </Show>
 
     <GridItem area={"main"}>
-      <GameGrid genre={genre} />
+      <GameGrid genre={selectedGenre} />
     </GridItem>
   </Grid>)
 }
