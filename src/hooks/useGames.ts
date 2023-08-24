@@ -14,8 +14,29 @@ export interface Game {
   metacritic: number
 }
 
+export interface Ordering {
+  value: string
+  label: string
+}
+
+export const orderingFields = [
+  { value: 'name', label: 'Name' },
+  { value: '-released', label: 'Released Date' },
+  { value: '-added', label: 'Added Date' },
+  { value: '-created', label: 'Created date' },
+  { value: '-updated', label: 'Updated date' },
+  { value: 'rating', label: 'Rating' },
+  { value: 'metacritic', label: 'Critics' }
+]
+
 function useGames(gameQuery: GameQuery) {
-  return useData<Game>('/games', { params: gameQuery }, [ gameQuery ])
+  return useData<Game>('/games', {
+    params: {
+      genres: gameQuery.genre?.id,
+      platforms: gameQuery.platform?.id,
+      ordering: gameQuery.ordering?.value
+    }
+  }, [ gameQuery ])
 }
 
 export default useGames
