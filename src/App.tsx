@@ -7,6 +7,7 @@ import { Genre } from './hooks/useGenres'
 import PlatformMenu from './components/PlatformMenu'
 import { Platform } from './hooks/usePlatforms'
 import SortSelector from './components/SortSelector'
+import { Ordering } from './hooks/useGames'
 
 export interface GameQuery {
   genre: Genre | null
@@ -31,7 +32,7 @@ function App() {
       lg: "250px 1fr"
     }}
   >
-    <GridItem area={"nav"} boxSize={'60px'} paddingX={5}>
+    <GridItem area={"nav"} paddingX={5} marginBottom={5}>
       <NavBar />
     </GridItem>
 
