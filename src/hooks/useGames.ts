@@ -1,5 +1,5 @@
+import { GameQuery } from '../App';
 import useData from './useData';
-import { Genre } from './useGenres';
 import { Platform } from './usePlatforms';
 
 interface PlatformWrapper {
@@ -14,9 +14,8 @@ export interface Game {
   metacritic: number
 }
 
-function useGames(genre: Genre | null, platform: Platform | null) {
-  // , { params: { platforms: platform?.id } }, [ platform?.id ]
-  return useData<Game>('/games', { params: { genres: genre?.id, platforms: platform?.id } }, [ genre?.id, platform?.id ])
+function useGames(gameQuery: GameQuery) {
+  return useData<Game>('/games', { params: gameQuery }, [ gameQuery ])
 }
 
 export default useGames
