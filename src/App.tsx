@@ -10,6 +10,7 @@ import SortSelector from './components/SortSelector'
 import { Ordering } from './hooks/useGames'
 import './index.css'
 import SearchBox from './components/SearchBox'
+import GameHeading from './components/GameHeading'
 
 export interface GameQuery {
   genre: Genre | null
@@ -47,8 +48,9 @@ function App() {
     </Show>
 
     <GridItem area={"main"} paddingX={5}>
+      <GameHeading gameQuery={gameQuery} />
       <HStack spacing={2} marginBottom={5}>
-      <PlatformMenu  onSelectPlatform={(platform: Platform) => setGameQuery({ ...gameQuery, platform })} selectedPlatform={gameQuery.platform} />
+        <PlatformMenu  onSelectPlatform={(platform: Platform) => setGameQuery({ ...gameQuery, platform })} selectedPlatform={gameQuery.platform} />
         <SortSelector selectedOrdering={gameQuery.ordering} onSelectOrdering={(ordering: Ordering) => setGameQuery({ ...gameQuery, ordering }) } />
       </HStack>
       <GameGrid gameQuery={gameQuery}/>
