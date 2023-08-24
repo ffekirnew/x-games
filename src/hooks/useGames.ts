@@ -30,11 +30,13 @@ export const orderingFields = [
 ]
 
 function useGames(gameQuery: GameQuery) {
+  console.log(gameQuery)
   return useData<Game>('/games', {
     params: {
       genres: gameQuery.genre?.id,
       platforms: gameQuery.platform?.id,
-      ordering: gameQuery.ordering?.value
+      ordering: gameQuery.ordering?.value,
+      search: gameQuery.searchQuery
     }
   }, [ gameQuery ])
 }

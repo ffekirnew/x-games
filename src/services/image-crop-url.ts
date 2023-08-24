@@ -1,4 +1,5 @@
 function getCroppedImageUrl(url: string): string {
+  if (url == null) return ''
   // Find media/games, replace it with media/crop/600/400/games
   
   const splitingIndex = url.indexOf("games/")
