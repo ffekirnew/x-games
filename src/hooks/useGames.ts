@@ -30,7 +30,6 @@ export const orderingFields = [
 ]
 
 function useGames(gameQuery: GameQuery) {
-  console.log(gameQuery)
   return useData<Game>('/games', {
     params: {
       genres: gameQuery.genre?.id,

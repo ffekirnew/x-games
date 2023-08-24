@@ -1,10 +1,12 @@
-import { HStack, Switch, Text, useColorMode } from '@chakra-ui/react'
+import { HStack, Switch, useColorMode } from '@chakra-ui/react'
+import { BsMoon, BsSun } from 'react-icons/bs'
 
 const ColorModeSwitch = () => {
   const { toggleColorMode, colorMode } = useColorMode()
   return <HStack>
+    <BsSun />
     <Switch isChecked={colorMode === 'dark'} onChange={toggleColorMode} />
-    <Text whiteSpace={'nowrap'}>Dark Mode</Text>
+    <BsMoon />
   </HStack>
 }
 

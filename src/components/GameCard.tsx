@@ -9,8 +9,8 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
-  return <Card>
-    <Image src={getCroppedImageUrl(game.background_image)} />
+  return <Card borderRadius={15}>
+    <Image src={getCroppedImageUrl(game.background_image)} objectFit={'cover'}/>
     <CardBody>
       <HStack justifyContent={'space-between'}>
         <GamePlatformIconsList platforms={game.parent_platforms.map(p => p.platform)} />
