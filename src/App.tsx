@@ -9,7 +9,6 @@ import { Platform } from './hooks/usePlatforms'
 import SortSelector from './components/SortSelector'
 import { Ordering } from './hooks/useGames'
 import './index.css'
-import SearchBox from './components/SearchBox'
 import GameHeading from './components/GameHeading'
 
 export interface GameQuery {
