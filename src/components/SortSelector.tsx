@@ -1,6 +1,6 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
 import { BsChevronDown } from "react-icons/bs"
-import { Ordering, orderingFields } from "../hooks/useGames"
+import { Ordering, orderingFields } from "../routing/services/game-service"
 
 interface Props {
   selectedOrdering: Ordering | null

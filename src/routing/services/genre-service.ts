@@ -1,4 +1,4 @@
-import useData from './useData';
+import ApiClient from './api-client'
 
 export interface Genre {
   id: number
@@ -8,8 +8,4 @@ export interface Genre {
   image_background: string
 }
 
-function useGenres() {
-  return useData<Genre>('/genres')
-}
-
-export default useGenres
+export default new ApiClient<Genre>("/genres")

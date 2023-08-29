@@ -1,6 +1,5 @@
-import { GameQuery } from '../App';
-import useData from './useData';
-import { Platform } from './usePlatforms';
+import ApiClient from './api-client'
+import { Platform } from './platform-service'
 
 interface PlatformWrapper {
   platform: Platform
@@ -29,15 +28,4 @@ export const orderingFields = [
   { value: 'metacritic', label: 'Critics' }
 ]
 
-function useGames(gameQuery: GameQuery) {
-  return useData<Game>('/games', {
-    params: {
-      genres: gameQuery.genre?.id,
-      platforms: gameQuery.platform?.id,
-      ordering: gameQuery.ordering?.value,
-      search: gameQuery.searchQuery
-    }
-  }, [ gameQuery ])
-}
-
-export default useGames
+export default new ApiClient<Game>("/games")

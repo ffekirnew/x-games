@@ -1,8 +1,8 @@
 import { Badge, Card, CardBody, HStack, Heading, Image, Text } from '@chakra-ui/react'
-import { Game } from '../hooks/useGames'
 import GamePlatformIconsList from './GamePlatformIconsList'
 import GameCriticBadge from './GameCriticBadge'
-import getCroppedImageUrl from '../services/image-crop-url'
+import getCroppedImageUrl from '../routing/services/image-crop-url'
+import { Game } from '../routing/services/game-service'
 
 interface Props {
   game: Game
