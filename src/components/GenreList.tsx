@@ -1,4 +1,4 @@
-import { Button, HStack, Heading, Image, List, ListItem, Skeleton, SkeletonText, Text } from '@chakra-ui/react';
+import { Button, HStack, Heading, Image, List, ListItem, Skeleton, SkeletonText } from '@chakra-ui/react';
 import { Genre } from '../routing/services/genre-service';
 import useGenres from '../routing/hooks/useGenres';
 import getCroppedImageUrl from '../routing/services/image-crop-url';
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
-  const { data, error, isLoading } = useGenres()
+  const { data, isLoading } = useGenres()
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
   return (<>

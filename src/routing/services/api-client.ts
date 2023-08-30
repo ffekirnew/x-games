@@ -1,5 +1,4 @@
 import axios from "axios";
-import { GameQuery } from "../../App";
 
 export const axiosInstance = axios.create({
   baseURL: 'https://api.rawg.io/api',

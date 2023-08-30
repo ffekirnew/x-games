@@ -1,10 +1,8 @@
 import { HStack, Image } from '@chakra-ui/react'
-import logoDark from '../assets/logo-dark.svg'
 import logoWhite from '../assets/logo-light.svg'
 
 import ColorModeSwitch from './ColorModeSwitch'
 import SearchBox from './SearchBox'
-import { useState } from 'react'
 
 interface Props {
   onSubmitSearchQuery: (searchQuery: string) => void
