@@ -13,19 +13,19 @@ import { Ordering } from './routing/services/game-service'
 import Games from './components/Games'
 
 export interface GameQuery {
-  genre: Genre | null
-  platform: Platform | null
-  ordering: Ordering | null
-  searchQuery: string | null
+  genreId?: number
+  platformId?: number
+  ordering?: Ordering
+  searchQuery?: string
   page: number | null
 }
 
 function App() {
   const [ gameQuery, setGameQuery ] = useState<GameQuery>({
-    genre: null,
-    platform: null,
-    ordering: null,
-    searchQuery: null,
+    genreId: undefined,
+    platformId: undefined,
+    ordering: undefined,
+    searchQuery: undefined,
     page: 1
   })
 
@@ -45,14 +45,14 @@ function App() {
 
     <Show above='lg'>
       <GridItem area={"aside"} paddingX={5}>
-        <GenreList onSelectGenre={(genre: Genre) => setGameQuery({...gameQuery, genre})} selectedGenre={gameQuery.genre}/>
+        <GenreList onSelectGenre={(genreId: number) => setGameQuery({...gameQuery, genreId: genreId})} selectedGenreId={gameQuery.genreId}/>
       </GridItem>
     </Show>
 
     <GridItem area={"main"} paddingX={5}>
       <GameHeading gameQuery={gameQuery} />
       <HStack spacing={2} marginBottom={5}>
-        <PlatformMenu  onSelectPlatform={(platform: Platform) => setGameQuery({ ...gameQuery, platform })} selectedPlatform={gameQuery.platform} />
+        <PlatformMenu  onSelectPlatform={(platformId: number) => setGameQuery({ ...gameQuery, platformId: platformId })} selectedPlatformId={gameQuery.platformId} />
         <SortSelector selectedOrdering={gameQuery.ordering} onSelectOrdering={(ordering: Ordering) => setGameQuery({ ...gameQuery, ordering }) } />
       </HStack>
       <Games gameQuery={gameQuery}/>

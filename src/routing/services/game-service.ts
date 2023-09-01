@@ -18,7 +18,7 @@ export interface Ordering {
   label: string
 }
 
-export const orderingFields = [
+export const orderingFields: Ordering[] = [
   { value: 'name', label: 'Name' },
   { value: '-released', label: 'Released Date' },
   { value: '-added', label: 'Added Date' },

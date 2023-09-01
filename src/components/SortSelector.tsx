@@ -3,7 +3,7 @@ import { BsChevronDown } from "react-icons/bs"
 import { Ordering, orderingFields } from "../routing/services/game-service"
 
 interface Props {
-  selectedOrdering: Ordering | null
+  selectedOrdering?: Ordering
   onSelectOrdering: (ordering: Ordering) => void
 }
 

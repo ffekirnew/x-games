@@ -3,6 +3,7 @@ import GamePlatformIconsList from './GamePlatformIconsList'
 import GameCriticBadge from './GameCriticBadge'
 import getCroppedImageUrl from '../routing/services/image-crop-url'
 import { Game } from '../routing/services/game-service'
+import placeholder from '../assets/placeholder.png' 
 
 interface Props {
   game: Game
@@ -10,7 +11,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return <Card borderRadius={15}>
-    <Image src={getCroppedImageUrl(game.background_image)} objectFit={'cover'}/>
+    <Image src={getCroppedImageUrl(game.background_image) || placeholder} objectFit={'cover'}/>
     <CardBody>
       <HStack justifyContent={'space-between'}>
         <GamePlatformIconsList platforms={game.parent_platforms.map(p => p.platform)} />
