@@ -5,8 +5,6 @@ import { useState } from 'react'
 import PlatformMenu from './components/PlatformMenu'
 import SortSelector from './components/SortSelector'
 import GameHeading from './components/GameHeading'
-import { Genre } from './routing/services/genre-service'
-import { Platform } from './routing/services/platform-service'
 
 import './index.css'
 import { Ordering } from './routing/services/game-service'

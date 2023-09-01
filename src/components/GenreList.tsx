@@ -1,5 +1,4 @@
 import { Button, HStack, Heading, Image, List, ListItem, Skeleton, SkeletonText } from '@chakra-ui/react';
-import { Genre } from '../routing/services/genre-service';
 import useGenres from '../routing/hooks/useGenres';
 import getCroppedImageUrl from '../routing/services/image-crop-url';
 
