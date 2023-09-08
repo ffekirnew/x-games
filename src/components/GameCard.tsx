@@ -1,8 +1,8 @@
 import { Card, CardBody, HStack, Heading, Image } from '@chakra-ui/react'
 import GamePlatformIconsList from './GamePlatformIconsList'
 import GameCriticBadge from './GameCriticBadge'
-import getCroppedImageUrl from '../routing/services/image-crop-url'
-import { Game } from '../routing/services/game-service'
+import getCroppedImageUrl from '../shared/services/image-crop-url'
+import { Game } from '../shared/services/game-service'
 import placeholder from '../assets/placeholder.png' 
 
 interface Props {

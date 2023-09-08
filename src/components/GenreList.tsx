@@ -1,6 +1,6 @@
 import { Button, HStack, Heading, Image, List, ListItem, Skeleton, SkeletonText } from '@chakra-ui/react';
-import useGenres from '../routing/hooks/useGenres';
-import getCroppedImageUrl from '../routing/services/image-crop-url';
+import useGenres from '../shared/hooks/useGenres';
+import getCroppedImageUrl from '../shared/services/image-crop-url';
 import useGameQueryStore from '../state-management/stores/gameQueryStore';
 
 
