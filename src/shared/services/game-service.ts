@@ -1,9 +1,6 @@
 import ApiClient from './api-client'
+import { Genre } from './genre-service';
 import { Platform } from './platform-service'
-
-interface PlatformWrapper {
-  platform: Platform;
-}
 
 export interface Game {
   id: number;
@@ -11,7 +8,8 @@ export interface Game {
   name: string;
   description_raw: string;
   background_image: string;
-  parent_platforms: PlatformWrapper[];
+  parent_platforms: { platform: Platform }[];
+  genres: Genre[]
   metacritic: number;
 }
 
