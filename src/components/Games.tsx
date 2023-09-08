@@ -24,7 +24,7 @@ const Games = () => {
       <SimpleGrid spacing={6} columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} paddingY={4}>
         { isLoading && skeletons.map(skeleton => <GameCardContainer key={skeleton}><GameCardSkeleton/></GameCardContainer>)}
         { data?.pages?.map((page, index) => <React.Fragment key={index}>
-          {page?.results.map((game) => <GameCardContainer key={game.id}><Link to={`/games/${game.id}`}><GameCard game={game}></GameCard></Link></GameCardContainer>)}
+          {page?.results.map((game) => <GameCardContainer key={game.id}><Link to={`/games/${game.slug}`}><GameCard game={game}></GameCard></Link></GameCardContainer>)}
         </React.Fragment>) }
       </SimpleGrid>
     </InfiniteScroll>
