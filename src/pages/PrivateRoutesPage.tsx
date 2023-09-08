@@ -1,7 +1,5 @@
 const PrivateRoutesPage = () => {
-  return (
-    <div>Oops...</div>
-  )
+  return (<></>);
 }
 
 export default PrivateRoutesPage
