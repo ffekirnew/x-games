@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { SimpleGrid, Spinner, Text } from '@chakra-ui/react'
 import GameCard from './GameCard'
 import GameCardSkeleton from './GameCardSkeleton'
@@ -23,7 +24,7 @@ const Games = () => {
       <SimpleGrid spacing={6} columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} paddingY={4}>
         { isLoading && skeletons.map(skeleton => <GameCardContainer key={skeleton}><GameCardSkeleton/></GameCardContainer>)}
         { data?.pages?.map((page, index) => <React.Fragment key={index}>
-          {page?.results.map((game) => <GameCardContainer key={game.id}><GameCard game={game}></GameCard></GameCardContainer>)}
+          {page?.results.map((game) => <GameCardContainer key={game.id}><Link to={`/games/${game.id}`}><GameCard game={game}></GameCard></Link></GameCardContainer>)}
         </React.Fragment>) }
       </SimpleGrid>
     </InfiniteScroll>
