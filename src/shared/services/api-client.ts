@@ -22,7 +22,11 @@ class ApiClient<T> {
   }
 
   getAll = async (query?: object) => {
-    return axiosInstance.get<FetchResponse<T>>(this.endpoint, query).then(res => res.data)
+    return axiosInstance.get<FetchResponse<T>>(this.endpoint, query).then(res => res.data);
+  }
+
+  getDetails = async(slug?: string) => {
+    return axiosInstance.get<T>(this.endpoint + "/" + slug).then(res => res.data);
   }
 }
 

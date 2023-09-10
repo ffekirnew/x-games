@@ -5,7 +5,7 @@ import { SiNintendo } from 'react-icons/si'
 
 import { HStack, Icon } from "@chakra-ui/react"
 import { IconType } from 'react-icons'
-import { Platform } from '../routing/services/platform-service'
+import { Platform } from '../shared/services/platform-service'
 
 interface Props {
   platforms: Platform[]

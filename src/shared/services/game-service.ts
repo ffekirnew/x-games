@@ -1,21 +1,21 @@
 import ApiClient from './api-client'
+import { Genre } from './genre-service';
 import { Platform } from './platform-service'
 
-interface PlatformWrapper {
-  platform: Platform
-}
-
 export interface Game {
-  id: number
-  name: string
-  background_image: string
-  parent_platforms: PlatformWrapper[]
-  metacritic: number
+  id: number;
+  slug: string;
+  name: string;
+  description_raw: string;
+  background_image: string;
+  parent_platforms: { platform: Platform }[];
+  genres: Genre[]
+  metacritic: number;
 }
 
 export interface Ordering {
-  value: string
-  label: string
+  value: string;
+  label: string;
 }
 
 export const orderingFields: Ordering[] = [

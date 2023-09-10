@@ -1,19 +1,18 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
-import { BsChevronDown } from "react-icons/bs"
-import { Ordering, orderingFields } from "../routing/services/game-service"
+import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import { BsChevronDown } from "react-icons/bs";
+import { orderingFields } from "../shared/services/game-service";
+import useGameQueryStore from "../state-management/stores/gameQueryStore";
 
-interface Props {
-  selectedOrdering?: Ordering
-  onSelectOrdering: (ordering: Ordering) => void
-}
+const SortSelector = () => {
+  const ordering = useGameQueryStore(s => s.gameQuery.ordering);
+  const setOrdering = useGameQueryStore(s => s.setOrdering);
 
-const SortSelector = ({ selectedOrdering, onSelectOrdering }: Props) => {
   return <Menu>
-    <MenuButton as={Button} rightIcon={<BsChevronDown />}> Order By: { selectedOrdering?.label || 'Relevance'}</MenuButton>
+    <MenuButton as={Button} rightIcon={<BsChevronDown />}> Order By: { ordering?.label || 'Relevance'}</MenuButton>
     <MenuList>
-      { orderingFields.map((ordering, index) => <MenuItem key={index} onClick={() => onSelectOrdering(ordering)}>{ ordering.label }</MenuItem>) }
+      { orderingFields.map((ordering, index) => <MenuItem key={index} onClick={() => setOrdering(ordering)}>{ ordering.label }</MenuItem>) }
     </MenuList>
   </Menu>
 }
 
-export default SortSelector
+export default SortSelector;
