@@ -1,5 +1,5 @@
-import { create } from "zustand"
-import { Ordering } from "../../routing/services/game-service"
+import { create } from "zustand";
+import { Ordering } from "../../shared/services/game-service";
 
 export interface GameQuery {
   genreId?: number

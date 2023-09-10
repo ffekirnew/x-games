@@ -11,7 +11,7 @@ const ExpandableText = ({ text }: Props) => {
   const toggleTextExpansion = () => setTextExpanded(!isTextExpanded);
   
   return (<>
-    <Text>
+    <Text textAlign={'justify'} fontSize={'lg'}>
       { isTextExpanded ? text : shortenedText }
       { isTextExpanded && <br /> }
       <Button fontWeight={'bold'} colorScheme='yellow' size={'xs'} onClick={toggleTextExpansion}>

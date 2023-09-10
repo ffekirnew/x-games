@@ -15,7 +15,7 @@ const GameDetailPage = () => {
   if (error || !game) throw error;
 
   return (<Flex flexDirection={'column'} gap={5} padding={5}>
-    <Heading>{ game.name }</Heading>
+    <Heading as={'h1'} fontSize={'5xl'} fontWeight={'extrabold'}>{ game.name }</Heading>
     <ExpandableText text={ game.description_raw } />
     <Grid gap={2} templateAreas={`"platforms metascore"
                           "genres publishers"
